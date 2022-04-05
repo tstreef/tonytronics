@@ -26,19 +26,19 @@
         <aside>
             <form>
                 <h4>Prijs</h4>
-                <input type="checkbox"> €0-€50<br>
-                <input type="checkbox"> €50-€100<br>
-                <input type="checkbox"> €100-€500<br><br>
+                <input id="prijs" name="0-50" type="checkbox"> €0-€50<br>
+                <input id="prijs" name="50-100" type="checkbox"> €50-€100<br>
+                <input id="prijs" name="100-500" type="checkbox"> €100-€500<br><br>
 
                 <h4>Merk</h4>
-                <input type="checkbox"> Merk A<br>
-                <input type="checkbox"> Merk B<br>
-                <input type="checkbox"> Merk C<br><br>
+                <input id="merk" type="checkbox"> Merk A<br>
+                <input id="merk" type="checkbox"> Merk B<br>
+                <input id="merk" type="checkbox"> Merk C<br><br>
 
                 <h4>Microcontroller</h4>
-                <input type="checkbox"> Microbit<br>
-                <input type="checkbox"> Arduino<br>
-                <input type="checkbox"> Raspberry PI<br><br>
+                <input id="micro" type="checkbox"> Microbit<br>
+                <input id="micro" type="checkbox"> Arduino<br>
+                <input id="micro" type="checkbox"> Raspberry PI<br><br>
             </form>
         </aside>
         
@@ -109,7 +109,42 @@
             <a href="https://graafschapcollege.nl/" target="blank">Contact</a>
         </footer>
 
-        <script>
+        <!-- <script>
+
+            function getPriceRange(txt)
+            {
+                let price1 = "";
+                let price2 = "";
+                let firstFound = false;
+
+                for (let i = 0; i < txt.length; i++)
+                {
+                    let letter = txt.substring(i,i+1);
+                    
+                    if (!firstFound)
+                    {
+                        firstFound = letter == "-";
+                    }
+                    
+                    if (!firstFound)
+                    {
+                        price1 += letter;
+                    }
+                    else
+                    {
+                        if (letter != "-")
+                        {
+                            price2 += letter;
+                        }
+                    }
+                }
+
+                return {
+                    'price1':parseInt(price1),
+                    'price2':parseInt(price2),
+                }
+            }
+
             let producten = 0;
 
             $('main').find('div').find('h5').click(function()
@@ -117,7 +152,37 @@
                 producten++;
                 $('#winkelmand').text('Winkelmand ('+producten+')');
             });
-        </script>
+
+            $('input[type=checkbox]').change(function()
+            {
+                const check = $(this);
+                $('main').find('div').each(function()
+                {
+                    const productDiv = $(this);
+                    const productPrice = parseFloat(productDiv.find('p').text().substring(2,productDiv.find('p').text().length));
+                    $('aside').find('form').find('input[type=checkbox]').each(function()
+                    {
+                        if (check.val())
+                        {
+                            switch($(this).attr('id'))
+                            {
+                                case "prijs": 
+                                    const priceRange = getPriceRange($(this).attr('name'));
+                                    if (productPrice >= priceRange['price1'] && productPrice <= priceRange['price2'])
+                                    {
+                                        productDiv.css('display','inline-block');
+                                    }
+                                    else
+                                    {
+                                        productDiv.css('display','none');
+                                    }
+                                
+                            }
+                        }
+                    })
+                });
+            });
+        </script> -->
 
     </body>
 </html>
