@@ -67,6 +67,7 @@ main div
     vertical-align: top;
     box-sizing: border-box;
     width: 250px;
+    min-height: 346px;
     padding: 15px;
     border: solid 2px lightgrey;
     margin: 15px 0 0 15px;
@@ -87,4 +88,18 @@ main div p
 {
     color: black;
     font-weight: bolder;
+}
+
+.zoekbalk{
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: Arial;
+}
+
+.zoekbalk:focus{
+    background-color: lightgray;
+}
+
+.zoekbalk::placeholder{
+    text-align: center;
 }
