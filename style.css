@@ -46,7 +46,7 @@ main
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
-    min-height: calc(300vh);
+    /* min-height: calc(150vh); */
 }
 
 aside
@@ -67,6 +67,7 @@ main div
     vertical-align: top;
     box-sizing: border-box;
     width: 250px;
+    min-height: 346px;
     padding: 15px;
     border: solid 2px lightgrey;
     margin: 15px 0 0 15px;
@@ -80,11 +81,48 @@ main div img
 main div h5
 {
     color: dodgerblue;
+    user-select: none;
 }
 
+main div h5:hover {
+    cursor: pointer;
+}
 
 main div p
 {
     color: black;
     font-weight: bolder;
+}
+
+footer {
+    background-color: lightblue;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+}
+
+footer a:hover {
+    color: rgba(255, 255, 255, 0.848);
+}
+
+.zoekbalk{
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: Arial;
+}
+
+.zoekbalk:focus{
+    background-color: lightgray;
+}
+
+.zoekbalk::placeholder{
+    text-align: center;
 }
