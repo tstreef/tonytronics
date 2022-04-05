@@ -46,7 +46,7 @@ main
     display: inline-block;
     vertical-align: top;
     box-sizing: border-box;
-    min-height: calc(300vh);
+    /* min-height: calc(150vh); */
 }
 
 aside
