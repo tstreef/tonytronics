@@ -81,8 +81,12 @@ main div img
 main div h5
 {
     color: dodgerblue;
+    user-select: none;
 }
 
+main div h5:hover {
+    cursor: pointer;
+}
 
 main div p
 {
