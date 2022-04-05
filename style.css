@@ -90,6 +90,25 @@ main div p
     font-weight: bolder;
 }
 
+footer {
+    background-color: lightblue;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+}
+
+footer a:hover {
+    color: rgba(255, 255, 255, 0.848);
+}
+
 .zoekbalk{
     border-radius: 5px;
     border: 1px solid black;
